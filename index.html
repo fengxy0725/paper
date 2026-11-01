@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f8faf9"><meta name="description" content="交互式中文论文导读。探索具身操作的五层数据来源、三类模型和七项原作证据。">
+<title>具身操作的数据金字塔 · 交互式研究手记</title>
+<style>:root{color-scheme:light;--paper:#fbfcfa;--ink:#192e38;--muted:#52656d;--line:#cfdbdd;--blue:#0b6282;--pale:#edf4f4;--serif:"Songti SC","STSong","Noto Serif CJK SC","Noto Serif SC","SimSun",Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Noto Sans CJK SC",sans-serif;--mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:82px}body{margin:0;color:var(--ink);background:var(--paper);font-family:var(--sans);line-height:1.65;font-size:16px}a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer}button,summary,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid #167ba9;outline-offset:3px}button{border:0;background:none}h1,h2,h3,p,figure{margin:0}button,a{touch-action:manipulation}[hidden]{display:none!important}.wide,.mast-inner,.top-menu nav{width:min(1220px,calc(100% - 100px));margin-inline:auto}.skip{position:absolute;top:-80px;left:16px;z-index:12;background:white;padding:10px}.skip:focus{top:4px}.mast{height:66px;background:rgba(251,252,250,.97);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:9}.mast-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.brand,.mast nav,.actions,.byline,.kicker,.eyebrow,.figure-stamp,.hero-caption,.meta-inner,.meta-inner a,.walk-head,.list-top,.cite-row,.resource-links{display:flex;align-items:center}.brand{gap:12px}.brand>span{font-family:var(--serif);font-size:21px;font-weight:bold;letter-spacing:.04em}.brand small,.small,.meta-label small,.meta-id,.kicker,.eyebrow,.figure-stamp,.walk-head,.list-top,.cite-row,.side-top,.caption>span,.fig-tag,.qa-head span,.tag,.model-seq>div>small,.task-note small{font-family:var(--mono);letter-spacing:.075em}.brand small{color:var(--muted);font-size:10px;font-weight:650;letter-spacing:.12em}.brand i,.byline i{height:14px;width:1px;background:var(--line)}.mast nav{gap:24px;font-size:13px}.paper-top span,.text-link span{color:var(--blue)}.toc-toggle{border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:13px}.toc-toggle b{font-weight:normal;margin-right:2px}.progress-track{position:absolute;bottom:-1px;height:2px;width:100%;pointer-events:none}.progress-track div{height:100%;background:#1583a6;width:0}.top-menu{position:absolute;top:100%;left:0;right:0;background:#fbfcfa;border-block:1px solid var(--line);box-shadow:0 12px 22px #15384412}.top-menu nav{display:grid;grid-template-columns:repeat(3,1fr);gap:0;padding:16px 0}.top-menu a{padding:9px 14px}.top-menu a:hover,.side nav a:hover{color:var(--blue);background:#eaf2f2}.nav-num{font:11px var(--mono);margin-right:12px;opacity:.8}.hero-wrap{background:radial-gradient(ellipse at 83% 24%,#eef5f4 0,transparent 52%),var(--paper)}.hero{display:grid;grid-template-columns:.97fr 1.08fr;gap:clamp(30px,5.2vw,82px);align-items:center;padding-block:clamp(46px,5.6vw,86px) clamp(36px,5vw,68px)}.hero-copy{padding-block:10px}.kicker,.eyebrow{gap:12px;color:var(--blue);font-size:11px;font-weight:650;letter-spacing:.14em}.live-dot{width:7px;height:7px;background:#278a99;border-radius:50%;box-shadow:0 0 0 4px #dfefec}.slash{color:#91a6ad;margin:0 2px}h1,h2,h3{font-family:var(--serif)}h1{font-size:clamp(54px,5.3vw,83px);letter-spacing:-.07em;line-height:1.15;font-weight:700;margin:24px 0 12px}h1 em{font-style:normal;color:#154b60}.en-title{color:#4b6974;font:italic clamp(15px,1.23vw,20px) Georgia,serif;line-height:1.45}.deck{color:#3e535c;font-size:clamp(15px,1.18vw,18px);line-height:1.85;max-width:32em;margin:23px 0 26px}.actions{gap:25px;font-size:14px}.primary{padding:10px 19px;color:white;background:#174656;border:1px solid #174656;border-radius:4px}.primary span,.text-link span{margin-left:10px}.primary:hover{background:#0a607b}.text-link:hover,.paper-top:hover,.source a:hover{text-decoration:underline}.byline{gap:11px;flex-wrap:wrap;font-size:12px;color:#304952;margin-top:27px}.byline span{color:#698087}.byline i{height:11px}.hero-figure{position:relative;background:#eef4f3;border:1px solid #c2d0d2;overflow:hidden;border-radius:6px;box-shadow:0 12px 30px -28px #174550}.figure-stamp{color:#456776;font-size:9px;letter-spacing:.13em;gap:10px;position:absolute;inset:17px 18px auto;justify-content:space-between;z-index:1;pointer-events:none}.figure-stamp span:first-child{border:1px solid #b5c8cd;padding:2px 6px}.figure-art{position:relative;background:radial-gradient(ellipse at 48% 50%,#f8fbf9 0%,#e8f0ef 80%)}.figure-art svg{display:block;width:100%;height:auto}.hero-caption{padding:12px 17px;gap:13px;background:#f7faf8;border-top:1px solid #cbd9d9}.fig-tag{font-size:10px;color:var(--blue);border-right:1px solid var(--line);padding-right:12px}.hero-caption div{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 12px}.hero-caption strong{font-size:14px}.hero-caption div span{font-size:12px;color:#4c656d}.hero-caption a{margin-left:auto;color:var(--blue);font-size:22px;line-height:1.25}.tier{cursor:pointer;transition:opacity .2s}.tier .front,.tier .top,.tier .right{transition:fill .18s,stroke .18s}.tier:is(:hover,:focus) .front,.tier.sel .front{fill:#287789}.tier:is(:hover,:focus) .right,.tier.sel .right{fill:#195669}.tier:is(:hover,:focus) .top,.tier.sel .top{fill:#8dbbc1}.tier:focus{outline:none}.tier:focus-visible .front,.tier:focus-visible .right{stroke:#082a33;stroke-width:3}.tier.sel .tier-node{fill:#16748a}.tier.sel .tier-id{fill:#145f71;font-weight:700}.meta-strip{border-block:1px solid var(--line);background:#f2f6f4}.meta-inner{min-height:84px;gap:clamp(26px,5vw,80px)}.meta-label,.meta-inner a span{font-size:13px}.meta-label small{display:block;font-size:9px;color:var(--muted);margin-top:2px}.meta-inner a{gap:12px}.meta-inner a b{font:31px Georgia,serif;color:#1d6375}.meta-inner a:hover span{color:var(--blue);text-decoration:underline}.meta-id{margin-left:auto;font-size:11px;color:var(--muted)}
+.reading-grid{display:grid;grid-template-columns:clamp(140px,14vw,184px) minmax(0,1fr);gap:clamp(48px,7vw,105px);padding-top:clamp(52px,6vw,83px);padding-bottom:54px}.side{align-self:start;position:sticky;top:98px}.side nav{display:grid;border-left:1px solid var(--line);padding-top:2px;gap:2px}.side .small{font-size:11px;color:var(--muted);padding:0 13px;margin-bottom:15px}.side nav a{font-size:13px;color:#54686e;border-left:2px solid transparent;margin-left:-1px;padding:7px 11px}.side nav a.active{border-color:var(--blue);color:var(--blue);background:#eaf3f3}.side-top{display:inline-block;margin:22px 0 0 13px;font-size:11px;color:var(--muted)}article{min-width:0}.chapter{padding-bottom:clamp(42px,5vw,72px);border-bottom:1px solid var(--line);margin-bottom:clamp(42px,5vw,72px);scroll-margin-top:5px}.chapter:last-child{margin:0;border-bottom:0;padding-bottom:12px}.eyebrow i{width:24px;height:1px;background:#89a7af}.chapter h2{font-size:clamp(30px,3.1vw,48px);font-weight:650;line-height:1.28;letter-spacing:-.045em;margin:12px 0}.intro{color:#455b63;max-width:51em;font-size:16px;line-height:1.9;margin-bottom:26px}.explorer,.walk,.models{border:1px solid var(--line);background:#fff;border-radius:5px;overflow:hidden}.explorer{display:grid;grid-template-columns:minmax(145px,25%) 1fr}.layer-tabs{border-right:1px solid var(--line);background:#f4f7f5;padding:10px}.layer-tabs button{display:block;width:100%;text-align:left;padding:12px 10px;border-bottom:1px solid #dae3e3;line-height:1.4;font-size:14px}.layer-tabs button span{display:block;color:#527079;font:10px var(--mono);letter-spacing:.09em;margin-bottom:4px}.layer-tabs button[aria-selected="true"]{color:#0b5a72;background:#e3f0f1;box-shadow:inset 3px 0 #167391}.layer-panel,.model-panel{padding:clamp(20px,2.3vw,34px);min-width:0}.tag,.task-note small{color:var(--blue);font-size:10px;font-weight:650}.layer-panel h3,.model-panel h3{font-size:clamp(24px,2.1vw,33px);line-height:1.3;margin:6px 0 12px}.layer-panel>p,.model-panel p{font-size:14px;line-height:1.8;color:#41555d}.fact-lines{margin:15px 0}.fact-lines>div{display:grid;grid-template-columns:70px minmax(0,1fr);gap:12px;padding:8px 0;border-top:1px solid #e2e9e8;font-size:13px;line-height:1.75}.fact-lines dt{color:var(--blue);font-weight:600}.fact-lines dd{margin:0;color:#425760}.layer-panel .example{background:#f0f5f3;padding:10px 13px;font-size:13px;border-left:2px solid #8aaea6}.ref{font-size:11px!important;color:#5c7078!important;margin-top:12px}.dimensions{margin-top:12px;border-block:1px solid var(--line)}summary{cursor:pointer}summary:focus-visible{outline-offset:-3px}.dimensions summary,.question summary,.case summary{list-style:none}.dimensions summary::-webkit-details-marker,.case summary::-webkit-details-marker,.question summary::-webkit-details-marker{display:none}.dimensions summary{padding:12px 2px;font-size:14px}.dimensions summary span{color:var(--muted);font-size:12px;margin-left:12px}.dimensions summary:after,.question summary:after{content:'+';float:right;color:var(--blue);font:19px var(--mono)}.dimensions[open]>summary:after,.question[open]>summary:after{content:'−'}.axis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;padding:8px 4px 18px}.axis-grid p{font-size:13px;color:var(--muted)}.axis-grid b{display:block;color:var(--ink)}.caption{font-size:12px;line-height:1.7;color:#61747a;margin-top:13px}.caption>span{color:#2e6071;margin-right:8px;font-weight:600}.walk-head,.list-top,.qa-head,.cite-row{justify-content:space-between;font:11px var(--mono);color:#4b6871;letter-spacing:.055em}.walk-head{padding:12px 18px;border-bottom:1px solid var(--line);background:#f5f8f6}.task-layout{display:grid;grid-template-columns:1.14fr 1fr}.task-map{align-self:stretch;display:grid;align-items:center;background-color:#edf3f1;background-image:radial-gradient(#b5c8c9 .8px,transparent .8px);background-size:13px 13px}.task-map svg{width:100%;display:block}.scene-marker circle{fill:#fbfdfa;stroke:#54808b;stroke-width:1.3}.scene-marker text{fill:#42646f;font:bold 10px monospace;text-anchor:middle}.scene-marker.on circle{fill:#11657d;stroke:#fff;stroke-width:2}.scene-marker.on text{fill:#fff}.task-note{align-self:center;padding:22px}.task-note h3{font-size:25px;margin:3px 0 7px}.task-note p{font-size:14px;color:#41555d}.task-note .diagnosis{margin-top:12px;padding-left:10px;border-left:2px solid #7ea2ae;font-size:13px}.task-tabs,.tabs,.filters{display:flex;flex-wrap:wrap}.task-tabs button{flex:1;padding:11px 6px;border-top:1px solid var(--line);border-right:1px solid var(--line);font-size:14px}.task-tabs button:last-child{border-right:0}.task-tabs button[aria-pressed=true],.tabs button[aria-selected=true]{background:#e7f1f2;color:#125c71;box-shadow:inset 0 -2px #1c7791}.task-tabs button span{font:10px var(--mono);margin-right:5px;color:var(--blue)}.tabs{border-bottom:1px solid var(--line);background:#f1f6f4}.tabs button{flex:1;padding:11px 8px;font-size:14px}.model-seq{margin:14px 0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px}.model-seq>div{background:#edf3f2;padding:12px;border:1px solid #d5e1df;align-self:stretch;font-size:14px}.model-seq>div>small{display:block;font-size:10px;color:var(--blue);margin-bottom:4px}.model-seq>span{color:#477f8c}.filters{gap:7px;margin:5px 0 20px}.filters button{border:1px solid var(--line);border-radius:26px;padding:5px 14px;font-size:13px}.filters button[aria-pressed=true]{background:#194859;color:#fff;border-color:#194859}.list-top{padding-bottom:9px;border-bottom:1px solid #8ca6ac}.case,.question{border-bottom:1px solid var(--line)}.case summary{display:grid;grid-template-columns:2.2em minmax(0,1fr) auto 20px;gap:14px;align-items:center;padding:16px 4px}.case summary:hover,.question summary:hover{background:#f0f5f4}.case .idx{font:11px var(--mono);color:#64818a}.case summary strong{font:600 clamp(18px,1.7vw,26px) Georgia,var(--serif);overflow-wrap:anywhere}.case summary small{display:block;color:var(--muted);font-size:13px;margin-top:2px}.score{color:#1c6b80;text-align:right;font:clamp(16px,1.5vw,22px) Georgia,serif}.score small{font:10px var(--sans)!important}.exp{font:17px var(--mono);text-align:right;color:var(--blue)}.case[open] .exp{transform:rotate(45deg)}.case-body{margin-left:calc(2.2em + 14px);padding:0 15px 15px 0}.case-body .fact-lines{margin:0}.case-body a{font-size:12px;color:var(--blue);text-decoration:underline;text-underline-offset:3px}.challenges{list-style:none;counter-reset:open;display:grid;grid-template-columns:repeat(3,1fr);padding:0;border:1px solid var(--line);margin:0 0 22px}.challenges li{counter-increment:open;background:#f0f5f3;padding:10px 11px;display:flex;align-items:center;gap:8px;font-size:13px}.challenges li:before{content:'0'counter(open);font:10px var(--mono);color:var(--blue)}.qa-head{padding-bottom:8px;border-bottom:1px solid #8ca6ac}.qa-head span{margin-left:6px;font-size:10px}.question summary{padding:13px 1px;font-size:15px}.question p{font-size:14px;line-height:1.85;color:#40565d;padding:0 10px 10px}.question .ref{margin:0}.source-entry{padding:20px 22px;background:#f1f6f3;border-left:2px solid #79a2a6}.source-entry .small{font-size:10px;color:var(--blue)}.source-entry h3{font:clamp(24px,2vw,32px)/1.24 Georgia,serif;margin:6px 0}.source-entry p{font-size:14px;color:var(--muted)}.resource-links{margin-top:12px;gap:14px;flex-wrap:wrap;color:var(--blue);font-size:13px}.cite-row{justify-content:flex-start;gap:12px;margin:20px 0 6px}.cite-row button{font:12px var(--sans);border:1px solid var(--line);padding:4px 9px;border-radius:3px}.cite-row #copyStatus{font:12px var(--sans)}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.65 var(--mono);background:#f3f6f4;padding:14px;margin:0;color:#39515a}footer{border-top:1px solid var(--line);background:#edf3ef}footer .wide{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-block:23px;font-size:12px;color:#45616a}footer i{margin:0 6px;color:#809a9d}
+@media(min-width:1450px){.hero{padding-block:70px}}
+@media(max-width:1050px){.wide,.mast-inner,.top-menu nav{width:calc(100% - 54px)}.hero{gap:30px}.meta-inner{gap:30px}.reading-grid{gap:38px;grid-template-columns:132px minmax(0,1fr)}.task-layout{grid-template-columns:1fr 1fr}.fact-lines>div{grid-template-columns:62px minmax(0,1fr)}}
+@media(max-width:780px){.wide,.mast-inner,.top-menu nav{width:calc(100% - 38px)}.mast{height:56px}html{scroll-padding-top:70px}.brand{gap:8px}.brand>span{font-size:18px}.brand small{font-size:9px}.mast nav{gap:12px}.hero{grid-template-columns:1fr;gap:23px;padding-block:35px 25px}.hero-copy{padding:0}.hero h1{font-size:clamp(52px,9vw,72px);margin:17px 0 8px}.deck{margin:14px 0 18px;max-width:37em}.byline{margin-top:17px}.hero-figure{max-width:590px;width:100%;margin-inline:auto}.meta-inner{min-height:66px;justify-content:space-between;gap:8px}.meta-id{display:none}.meta-inner a{gap:7px}.meta-inner a b{font-size:24px}.meta-inner a span{font-size:12px}.reading-grid{display:block;padding-top:38px}.side{display:none}.chapter h2{font-size:32px}.layer-tabs{padding:6px}.top-menu nav{grid-template-columns:repeat(2,1fr)}.intro{font-size:15px;margin-bottom:18px}}
+@media(max-width:520px){.wide,.mast-inner,.top-menu nav{width:calc(100% - 32px)}.brand small,.brand i{display:none}.mast nav{font-size:12px}.toc-toggle{font-size:12px}.brand svg{width:26px}.hero h1{font-size:53px}.hero-caption{padding:8px 10px;gap:8px}.hero-caption div{gap:1px 7px}.hero-caption div span{font-size:11px}.figure-stamp{inset:9px 10px auto;font-size:8px}.hero .actions{gap:18px}.byline{gap:8px}.meta-label{display:none}.meta-inner{gap:4px}.meta-inner a{gap:6px}.explorer{display:block}.layer-tabs{border:0;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:2px;padding:6px}.layer-tabs button{width:auto;font-size:12px;flex:1 0 27%;border:0;padding:7px}.layer-tabs button span{margin-bottom:2px}.layer-tabs button[aria-selected=true]{box-shadow:inset 0 -2px #167391}.layer-panel,.model-panel{padding:16px}.fact-lines>div{grid-template-columns:60px minmax(0,1fr);gap:8px}.axis-grid{grid-template-columns:1fr}.task-layout{grid-template-columns:1fr}.task-map svg{max-height:215px}.task-note{padding:15px}.task-tabs button{font-size:12px}.task-tabs button span{display:block}.model-seq{gap:6px}.model-seq>div{padding:9px;font-size:13px}.case summary{grid-template-columns:18px minmax(0,1fr) auto 12px;gap:7px}.case-body{margin-left:0;padding:0 3px 15px}.case summary strong{font-size:18px}.case summary small{font-size:12px}.score{font-size:15px;max-width:95px}.challenges{grid-template-columns:repeat(2,1fr)}.challenges li{font-size:12px}.walk-head{font-size:9px}.top-menu a{padding:8px 2px}.nav-num{margin-right:7px}footer .wide{flex-wrap:wrap}footer .wide>span:nth-child(2){display:none}.source-entry{padding:15px}.filters{gap:5px}.filters button{font-size:12px;padding:5px 10px}.question summary{padding-right:4px}.chapter h2{font-size:29px}.dimensions summary{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body id="top">
+<a class="skip" href="#reading">跳至研究正文</a>
+<header class="mast"><div class="mast-inner"><a class="brand" href="#top" aria-label="研究手记首页"><svg width="32" height="31" viewBox="0 0 34 32" aria-hidden="true"><path d="M17 2 32 10 17 18 2 10Z" fill="#117b9b"/><path d="m2 16 15 8 15-8M2 22l15 8 15-8" fill="none" stroke="#173e4d" stroke-width="2.4"/></svg><span>研究手记</span><i></i><small>PAPER ATLAS</small></a><nav aria-label="页首导航"><a class="paper-top" href="https://arxiv.org/abs/2607.24744v2" target="_blank" rel="noopener">论文原文 <span>↗</span></a><button class="toc-toggle" id="tocToggle" aria-expanded="false" aria-controls="topMenu"><b aria-hidden="true">☰</b> 目录</button></nav></div><div class="progress-track"><div id="progress"></div></div>
+<div id="topMenu" class="top-menu" hidden><nav aria-label="章节目录"><a href="#layers"><span class="nav-num">01</span>数据金字塔</a><a href="#task"><span class="nav-num">02</span>任务剖面</a><a href="#models"><span class="nav-num">03</span>模型范式</a><a href="#evidence"><span class="nav-num">04</span>研究证据</a><a href="#outlook"><span class="nav-num">05</span>开放挑战</a><a href="#sources"><span class="nav-num">06</span>原文与引用</a></nav></div></header>
+<main>
+<div class="hero-wrap">
+<section class="hero wide" aria-labelledby="title">
+<div class="hero-copy">
+<div class="kicker"><span class="live-dot"></span> RESEARCH BRIEF <span class="slash">/</span> 001</div>
+<h1 id="title">具身操作的<br><em>数据金字塔</em></h1>
+<p class="en-title" lang="en">Data Pyramid for Embodied Manipulation</p>
+<p class="deck">机器人能从一段视频里学到什么？要让它真正拿稳一个杯子，还需要记录哪些动作、接触和失败？这篇综述沿五种数据来源，追踪知识如何进入机器人的控制过程。</p>
+<div class="actions"><a class="primary" href="#layers">探索五层数据 <span aria-hidden="true">↓</span></a><a class="text-link" href="#evidence">查看研究证据 <span aria-hidden="true">↘</span></a></div>
+<div class="byline"><span>原论文</span> Yifan Ye 等 <i></i> <span>版本</span> arXiv v2 · 2026.08</div>
+</div>
+<figure class="hero-figure">
+<div class="figure-stamp"><span>FIG. 01</span><span>点选塔层 · INTERACTIVE</span></div>
+<div class="figure-art"><svg viewBox="0 0 580 425" xmlns="http://www.w3.org/2000/svg" role="group" aria-label="可点击的五层数据金字塔，选择一层查看监督信号">
+    <defs><pattern id="drawingGrid" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".8" fill="#95adaf" opacity=".56"/></pattern><linearGradient id="plinthGlow" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#96b6b6" stop-opacity=".24"/><stop offset="1" stop-color="#b9c9c8" stop-opacity=".48"/></linearGradient></defs>
+    <rect width="580" height="425" fill="url(#drawingGrid)"/>
+    <g fill="none" stroke="#9ab5b7" stroke-width=".8"><path d="M28 62h13m-6.5-6.5v13M539 366h13m-6.5-6.5v13M28 372h13m-6.5-6.5v13"/><path d="M260 42v345M40 325l220 82 215-82M36 325l224-80 196 76" stroke-dasharray="3 5"/><ellipse cx="260" cy="321" rx="195" ry="71" stroke-dasharray="2 6"/></g>
+    <path d="M60 318 260 243 460 318 260 395Z" fill="url(#plinthGlow)" stroke="#90aaa9" stroke-width=".7"/>
+    <g stroke="#9fb6b8" stroke-width=".6" opacity=".65"><path d="M76.7 311.7L276.7 387.7M76.7 324.3L276.7 248.3"/><path d="M93.3 305.3L293.3 381.3M93.3 330.7L293.3 254.7"/><path d="M110.0 299.0L310.0 375.0M110.0 337.0L310.0 261.0"/><path d="M126.7 292.7L326.7 368.7M126.7 343.3L326.7 267.3"/><path d="M143.3 286.3L343.3 362.3M143.3 349.7L343.3 273.7"/><path d="M160.0 280.0L360.0 356.0M160.0 356.0L360.0 280.0"/><path d="M176.7 273.7L376.7 349.7M176.7 362.3L376.7 286.3"/><path d="M193.3 267.3L393.3 343.3M193.3 368.7L393.3 292.7"/><path d="M210.0 261.0L410.0 337.0M210.0 375.0L410.0 299.0"/><path d="M226.7 254.7L426.7 330.7M226.7 381.3L426.7 305.3"/><path d="M243.3 248.3L443.3 324.3M243.3 387.7L443.3 311.7"/></g><g class="tier" data-tier="4" role="button" tabindex="0" aria-pressed="false" aria-label="选择 L05 通用数据"><polygon points="124.0,278.0 260.0,226.3 396.0,278.0 260.0,329.7" class="top" fill="#d0d9c7" stroke="#6b8d95" stroke-width="1"/><polygon points="124.0,278.0 260.0,329.7 260.0,379.6 90.0,315.0" class="front" fill="#b1c2ae" stroke="#60838c" stroke-width="1"/><polygon points="260.0,329.7 396.0,278.0 430.0,315.0 260.0,379.6" class="right" fill="#8caa9e" stroke="#597c87" stroke-width="1"/><path d="M135.3 282.3L104.2 320.4M146.7 286.6L118.3 325.8M158.0 290.9L132.5 331.1M169.3 295.2L146.7 336.5M180.7 299.5L160.8 341.9M192.0 303.8L175.0 347.3M203.3 308.1L189.2 352.7M214.7 312.5L203.3 358.1M226.0 316.8L217.5 363.5M237.3 321.1L231.7 368.8M248.7 325.4L245.8 374.2M117.2 285.4L260.0 339.7M110.4 292.8L260.0 349.6M103.6 300.2L260.0 359.6M96.8 307.6L260.0 369.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><path d="M271.3 325.4L274.2 374.2M282.7 321.1L288.3 368.8M294.0 316.8L302.5 363.5M305.3 312.5L316.7 358.1M316.7 308.1L330.8 352.7M328.0 303.8L345.0 347.3M339.3 299.5L359.2 341.9M350.7 295.2L373.3 336.5M362.0 290.9L387.5 331.1M373.3 286.6L401.7 325.8M384.7 282.3L415.8 320.4M260.0 339.7L402.8 285.4M260.0 349.6L409.6 292.8M260.0 359.6L416.4 300.2M260.0 369.6L423.2 307.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><rect x="453" y="291" width="114" height="42" fill="transparent"/><path d="M430 315l12 -6h16" fill="none" stroke="#7d9ca2" stroke-width=".9"/><circle class="tier-node" cx="458" cy="309" r="2.5" fill="#88a2a2"/><text class="tier-id" x="469" y="307" fill="#365664" font-size="11" font-family="monospace">L05</text><text x="469" y="320" font-family="monospace" font-size="8.5" letter-spacing=".8" fill="#496a72">GENERAL</text></g><g class="tier" data-tier="3" role="button" tabindex="0" aria-pressed="false" aria-label="选择 L04 仿真数据"><polygon points="158.0,225.0 260.0,186.2 362.0,225.0 260.0,263.8" class="top" fill="#bad0c8" stroke="#6b8d95" stroke-width="1"/><polygon points="158.0,225.0 260.0,263.8 260.0,313.7 124.0,262.0" class="front" fill="#94b2ae" stroke="#60838c" stroke-width="1"/><polygon points="260.0,263.8 362.0,225.0 396.0,262.0 260.0,313.7" class="right" fill="#749795" stroke="#597c87" stroke-width="1"/><path d="M168.2 228.9L137.6 267.2M178.4 232.8L151.2 272.3M188.6 236.6L164.8 277.5M198.8 240.5L178.4 282.7M209.0 244.4L192.0 287.8M219.2 248.3L205.6 293.0M229.4 252.1L219.2 298.2M239.6 256.0L232.8 303.3M249.8 259.9L246.4 308.5M151.2 232.4L260.0 273.7M144.4 239.8L260.0 283.7M137.6 247.2L260.0 293.7M130.8 254.6L260.0 303.7" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><path d="M270.2 259.9L273.6 308.5M280.4 256.0L287.2 303.3M290.6 252.1L300.8 298.2M300.8 248.3L314.4 293.0M311.0 244.4L328.0 287.8M321.2 240.5L341.6 282.7M331.4 236.6L355.2 277.5M341.6 232.8L368.8 272.3M351.8 228.9L382.4 267.2M260.0 273.7L368.8 232.4M260.0 283.7L375.6 239.8M260.0 293.7L382.4 247.2M260.0 303.7L389.2 254.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><rect x="453" y="238" width="114" height="42" fill="transparent"/><path d="M396 262l12 -6h50" fill="none" stroke="#7d9ca2" stroke-width=".9"/><circle class="tier-node" cx="458" cy="256" r="2.5" fill="#88a2a2"/><text class="tier-id" x="469" y="254" fill="#365664" font-size="11" font-family="monospace">L04</text><text x="469" y="267" font-family="monospace" font-size="8.5" letter-spacing=".8" fill="#496a72">SIM</text></g><g class="tier" data-tier="2" role="button" tabindex="0" aria-pressed="false" aria-label="选择 L03 人类视角数据"><polygon points="192.0,172.0 260.0,146.2 328.0,172.0 260.0,197.8" class="top" fill="#a7c8c9" stroke="#6b8d95" stroke-width="1"/><polygon points="192.0,172.0 260.0,197.8 260.0,247.8 158.0,209.0" class="front" fill="#80a9b1" stroke="#60838c" stroke-width="1"/><polygon points="260.0,197.8 328.0,172.0 362.0,209.0 260.0,247.8" class="right" fill="#598593" stroke="#597c87" stroke-width="1"/><path d="M200.5 175.2L170.8 213.8M209.0 178.5L183.5 218.7M217.5 181.7L196.2 223.5M226.0 184.9L209.0 228.4M234.5 188.2L221.8 233.2M243.0 191.4L234.5 238.1M251.5 194.6L247.2 242.9M185.2 179.4L260.0 207.8M178.4 186.8L260.0 217.8M171.6 194.2L260.0 227.8M164.8 201.6L260.0 237.8" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><path d="M268.5 194.6L272.8 242.9M277.0 191.4L285.5 238.1M285.5 188.2L298.2 233.2M294.0 184.9L311.0 228.4M302.5 181.7L323.8 223.5M311.0 178.5L336.5 218.7M319.5 175.2L349.2 213.8M260.0 207.8L334.8 179.4M260.0 217.8L341.6 186.8M260.0 227.8L348.4 194.2M260.0 237.8L355.2 201.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><rect x="453" y="185" width="114" height="42" fill="transparent"/><path d="M362 209l12 -6h84" fill="none" stroke="#7d9ca2" stroke-width=".9"/><circle class="tier-node" cx="458" cy="203" r="2.5" fill="#88a2a2"/><text class="tier-id" x="469" y="201" fill="#365664" font-size="11" font-family="monospace">L03</text><text x="469" y="214" font-family="monospace" font-size="8.5" letter-spacing=".8" fill="#496a72">HUMAN</text></g><g class="tier" data-tier="1" role="button" tabindex="0" aria-pressed="false" aria-label="选择 L02 UMI 类数据"><polygon points="226.0,119.0 260.0,106.1 294.0,119.0 260.0,131.9" class="top" fill="#93bac1" stroke="#6b8d95" stroke-width="1"/><polygon points="226.0,119.0 260.0,131.9 260.0,181.8 192.0,156.0" class="front" fill="#679bab" stroke="#60838c" stroke-width="1"/><polygon points="260.0,131.9 294.0,119.0 328.0,156.0 260.0,181.8" class="right" fill="#477e92" stroke="#597c87" stroke-width="1"/><path d="M231.7 121.2L203.3 160.3M237.3 123.3L214.7 164.6M243.0 125.5L226.0 168.9M248.7 127.6L237.3 173.2M254.3 129.8L248.7 177.5M219.2 126.4L260.0 141.9M212.4 133.8L260.0 151.9M205.6 141.2L260.0 161.9M198.8 148.6L260.0 171.9" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><path d="M265.7 129.8L271.3 177.5M271.3 127.6L282.7 173.2M277.0 125.5L294.0 168.9M282.7 123.3L305.3 164.6M288.3 121.2L316.7 160.3M260.0 141.9L300.8 126.4M260.0 151.9L307.6 133.8M260.0 161.9L314.4 141.2M260.0 171.9L321.2 148.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><rect x="453" y="132" width="114" height="42" fill="transparent"/><path d="M328 156l12 -6h118" fill="none" stroke="#7d9ca2" stroke-width=".9"/><circle class="tier-node" cx="458" cy="150" r="2.5" fill="#88a2a2"/><text class="tier-id" x="469" y="148" fill="#365664" font-size="11" font-family="monospace">L02</text><text x="469" y="161" font-family="monospace" font-size="8.5" letter-spacing=".8" fill="#496a72">UMI</text></g><g class="tier sel" data-tier="0" role="button" tabindex="0" aria-pressed="true" aria-label="选择 L01 真机数据"><polygon points="260.0,66.0 260.0,66.0 260.0,66.0 260.0,66.0" class="top" fill="#77acb6" stroke="#6b8d95" stroke-width="1"/><polygon points="260.0,66.0 260.0,66.0 260.0,115.9 226.0,103.0" class="front" fill="#4b8898" stroke="#60838c" stroke-width="1"/><polygon points="260.0,66.0 260.0,66.0 294.0,103.0 260.0,115.9" class="right" fill="#306e83" stroke="#597c87" stroke-width="1"/><path d="M260.0 66.0L234.5 106.2M260.0 66.0L243.0 109.5M260.0 66.0L251.5 112.7M253.2 73.4L260.0 76.0M246.4 80.8L260.0 86.0M239.6 88.2L260.0 96.0M232.8 95.6L260.0 105.9" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><path d="M260.0 66.0L268.5 112.7M260.0 66.0L277.0 109.5M260.0 66.0L285.5 106.2M260.0 76.0L266.8 73.4M260.0 86.0L273.6 80.8M260.0 96.0L280.4 88.2M260.0 105.9L287.2 95.6" stroke="#375f6e" stroke-width=".6" opacity=".3" fill="none" pointer-events="none"/><rect x="453" y="79" width="114" height="42" fill="transparent"/><path d="M294 103l12 -6h152" fill="none" stroke="#7d9ca2" stroke-width=".9"/><circle class="tier-node" cx="458" cy="97" r="2.5" fill="#88a2a2"/><text class="tier-id" x="469" y="95" fill="#365664" font-size="11" font-family="monospace">L01</text><text x="469" y="108" font-family="monospace" font-size="8.5" letter-spacing=".8" fill="#496a72">ROBOT</text></g><g fill="#4c6e75" font-family="monospace" font-size="8" letter-spacing="1"><text x="20" y="405">AXONOMETRIC STUDY</text><text x="560" y="405" text-anchor="end">5 LAYERS</text></g></svg></div>
+<figcaption class="hero-caption"><span class="fig-tag">图 01</span><div><strong id="heroLayerLabel">L01 · 真机数据</strong><span id="heroLayerText">观察、控制与真实反馈</span></div><a href="#layers" aria-label="阅读所选数据层" title="阅读所选数据层">↘</a></figcaption>
+</figure>
+</section></div>
+<div class="meta-strip"><div class="wide meta-inner"><span class="meta-label">阅读坐标 <small>AT A GLANCE</small></span><a href="#layers"><b>05</b><span>数据来源</span></a><a href="#models"><b>03</b><span>模型范式</span></a><a href="#outlook"><b>06</b><span>开放挑战</span></a><span class="meta-id">arXiv:2607.24744v2</span></div></div>
+<div class="reading-grid wide" id="reading">
+<aside class="side"><nav aria-label="正文导航"><span class="small">本文目录</span><a href="#layers"><span class="nav-num">01</span>数据金字塔</a><a href="#task"><span class="nav-num">02</span>任务剖面</a><a href="#models"><span class="nav-num">03</span>模型范式</a><a href="#evidence"><span class="nav-num">04</span>研究证据</a><a href="#outlook"><span class="nav-num">05</span>开放挑战</a><a href="#sources"><span class="nav-num">06</span>原文与引用</a></nav><a class="side-top" href="#top">↑ 回到页首</a></aside>
+<article>
+<section class="chapter" id="layers"><div class="eyebrow">01 <i></i> DATA SOURCES</div>
+<h2>五层数据，五种监督</h2><p class="intro">从塔尖到塔底，数据与目标机器人控制的直接联系和采集规模之间存在取舍。选择一层，可以看到采集者留下了哪些信号，以及迁移到另一台机器人时会遇到什么问题。</p>
+<div class="explorer"><div id="layerTabs" class="layer-tabs" role="tablist" aria-label="五种数据来源" aria-orientation="vertical"></div><div class="layer-panel" id="layerPanel" role="tabpanel" tabindex="0"></div></div>
+<details class="dimensions"><summary>怎样比较两种数据？<span>六个维度</span></summary><div class="axis-grid"><p><b>可扩展性</b>多采一批数据，需要多少硬件、人力和复位时间？</p><p><b>机器人对齐</b>监督信号能否转成目标平台可以执行的动作？</p><p><b>数据质量</b>时间戳、标签和执行结果是否一致？</p><p><b>多样性</b>是否覆盖新的任务、物体、场景和失败状态？</p><p><b>可复用性</b>换任务或换平台后，还有哪些信息可用？</p><p><b>物理保真度</b>摩擦、接触和时延能否反映真实交互？</p></div></details>
+<p class="caption"><span>阅读依据</span> 综述图 1、图 3 与第 2–6 节。塔的宽度用来示意来源，不代表样本量或训练权重。</p></section>
+
+<section class="chapter" id="task"><div class="eyebrow">02 <i></i> TASK WALKTHROUGH</div><h2>让机器人把餐具放进抽屉</h2><p class="intro">同一台机器人，可能因为看错目标、拉不开抽屉、夹不稳餐具或不会纠错而失败。点击四个环节，看看每次失败暴露了哪一种监督缺口。</p>
+<div class="walk"><div class="walk-head"><span>图 02 · 任务剖面</span><span>教学示例 / SCHEMATIC</span></div><div class="task-layout"><div class="task-map"><svg viewBox="0 0 380 255" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="餐具与抽屉的轴测示意图，编号标出识别、开屉、放置和纠错位置">
+<g fill="none" stroke="#a1b5b4" stroke-width=".8" stroke-dasharray="3 5"><path d="m22 157 164 74 171-75M40 98l104-47 185 84M190 30v190"/></g>
+<g stroke="#59747a" stroke-linejoin="round" stroke-width="1.6">
+<path d="m78 91 98-43 138 57-97 48Z" fill="#edf3e9"/><path d="m78 91 139 62v62L78 151Z" fill="#c0d1c7"/><path d="m217 153 97-48v61l-97 49Z" fill="#93b1ab"/>
+<path d="m86 105 123 55v30L86 134Z" fill="#526e71"/>
+<path d="m45 144 42-22 119 52-39 23Z" fill="#e4ede6"/><path d="m44 131 42-21 1 12-42 22Z" fill="#b8cbc2"/><path d="m44 131 123 54 41-22-121-52v12l106 46-26 15-122-54Z" fill="#cedbd2"/>
+<path d="m44 131 123 54v24L44 155Z" fill="#b7cbc0"/><path d="m167 185 41-22v22l-41 24Z" fill="#90aaa4"/>
+<path d="m85 155 34 15" stroke="#43636b" stroke-width="4"/>
+<path d="m215 88 36 16 42-19-36-16Z" stroke="#66868b" fill="#d6e6e3"/><path d="m235 88 13 6m-9-8 13 6m-10-9 13 6m-15-4 10 5-8 6" fill="none" stroke="#487984" stroke-width="1.4"/>
+<path d="m139 114 25 11-2 2-25-11m5-10c-6-3-11 0-8 4 2 3 6 5 10 4s5-5-2-8Z" fill="#bed3d4"/><path d="M267 28l-17 18 8 17-9 13m14-8 8-14-5-17 12-11" fill="none" stroke="#638c98" stroke-width="4"/>
+</g>
+<path d="M247 79Q236 138 153 139" stroke="#52909a" stroke-width="1.8" stroke-dasharray="5 5" fill="none"/><path d="m158 134-7 5 7 3" fill="none" stroke="#52909a" stroke-width="1.8"/>
+<g class="scene-marker" data-scene="0"><circle cx="284" cy="84" r="10"/><text x="284" y="88">1</text></g>
+<g class="scene-marker" data-scene="1"><circle cx="95" cy="164" r="10"/><text x="95" y="168">2</text></g>
+<g class="scene-marker" data-scene="2"><circle cx="165" cy="126" r="10"/><text x="165" y="130">3</text></g>
+<g class="scene-marker" data-scene="3"><circle cx="208" cy="153" r="10"/><text x="208" y="157">4</text></g>
+<text x="15" y="240" font-family="monospace" font-size="9" letter-spacing="1" fill="#57767c">DRAWER / UTENSIL</text></svg>
+</div><div id="taskNote" class="task-note" aria-live="polite"></div></div><div id="taskTabs" class="task-tabs" role="group" aria-label="选择任务环节"></div></div>
+<p class="caption"><span>图注</span> 示意图与诊断是依据综述框架推演的教学例子。它们没有对应的实测轨迹或成功率。</p></section>
+
+<section class="chapter" id="models"><div class="eyebrow">03 <i></i> MODEL PARADIGMS</div><h2>同一段交互，三种学习目标</h2><p class="intro">先看模型要输出什么，再看它需要哪一种训练信号。切换范式，比较从观察到计划、动作或未来预测的路径。</p>
+<div class="models"><div id="modelTabs" class="tabs" role="tablist" aria-label="模型范式"></div><div id="modelPanel" class="model-panel" role="tabpanel" tabindex="0"></div></div><p class="caption"><span>阅读依据</span> 综述第 7 节、表 7。模型可以兼有多种能力，这里的分类依据主要训练目标。</p></section>
+
+<section class="chapter" id="evidence"><div class="eyebrow">04 <i></i> EVIDENCE INDEX</div><h2>回到七篇代表论文</h2><p class="intro">按证据类型筛选，展开条目查看实验对象、分母和评价指标。数字保留各原作的定义，阅读时可直接回查对应的图表。</p>
+<div class="filters" id="filters" role="group" aria-label="筛选研究证据"></div><div class="list-top"><span>作者报告结果</span><span id="resultCount" aria-live="polite"></span></div><div id="caseList"></div><p class="caption"><span>阅读提示</span> 完成度、任务成功率和数据规模衡量不同的量。每项结果只在条目所列条件下解释。</p></section>
+
+<section class="chapter" id="outlook"><div class="eyebrow">05 <i></i> OPEN QUESTIONS</div><h2>下一批数据，应该采什么？</h2><p class="intro">综述第 8 节提出六个方向。把它们落到一次具体的采集决策，往往需要先知道当前策略在哪里失败。</p><ol class="challenges"><li>大规模触觉数据</li><li>失败与恢复轨迹</li><li>可扩展采集流程</li><li>跨本体动作对齐</li><li>第一视角灵巧操作</li><li>训练数据的配比</li></ol><div class="qa-head">研究问题 <span>/ READING QUESTIONS</span></div><div id="questions"></div></section>
+
+<section class="chapter source" id="sources"><div class="eyebrow">06 <i></i> REFERENCES</div><h2>原文与引用</h2><p class="intro">本文是对综述的中文交互式解读。可从下列入口查看 PDF、作者维护的资源索引和每项研究的上下文。</p>
+<div class="source-entry"><span class="small">原始综述 · 2026</span><h3 lang="en">Data Pyramid for Embodied Manipulation: A Survey</h3><p>Yifan Ye、Yankai Fu、Yaoxu Lv 等 · arXiv:2607.24744v2</p><div class="resource-links"><a href="https://arxiv.org/abs/2607.24744v2" target="_blank" rel="noopener">论文与 PDF ↗</a><a href="https://jasper-aaa.github.io/embodied-data-pyramid/" target="_blank" rel="noopener">作者项目页 ↗</a><a href="https://github.com/worldbench/awesome-embodied-data-pyramid" target="_blank" rel="noopener">资源索引 ↗</a></div></div>
+<div class="cite-row"><span>BIBTEX</span><button id="copyCite" type="button">复制引用</button><span id="copyStatus" role="status"></span></div><pre id="bib"></pre></section>
+</article></div>
+</main>
+<footer><div class="wide"><span>研究手记 <i>/</i> PAPER ATLAS</span><span>具身操作的数据金字塔</span><a href="#top">返回顶部 ↑</a></div></footer>
+<noscript>请启用 JavaScript 以切换数据层、任务步骤和研究条目。</noscript>
+<script>window.surveyLayers = [
+  {
+    id: "real",
+    num: 1,
+    cn: "真机数据",
+    en: "Real-Robot Data",
+    signal: "把机器人看见的场景、自身状态、发出的控制指令和随后的物理结果连成一条轨迹。",
+    capture: "在真实平台上遥操作、运行脚本或部署策略。策略偏离时，人可以接管并示范恢复动作。",
+    transfer: "同一设备上的记录最接近部署条件。换机械臂时，还要核对关节含义、工具坐标和控制频率。",
+    limit: "硬件占用、复位和维护限制采集规模。反复在同一场景成功，仍可能漏掉新物体或夹持滑落后的状态。",
+    example: "QT-Opt 有 58 万条轨迹，表中只列 1 项任务。DROID 的 7.6 万条轨迹覆盖 86 项任务。轨迹数和任务覆盖回答不同问题。",
+    ref: "第 2 节，第 7–14 页；表 1，第 9 页；图 5，第 8 页"
+  },
+  {
+    id: "umi",
+    num: 2,
+    cn: "UMI 类数据",
+    en: "UMI-Style Data",
+    signal: "记录人操作便携工具时的腕部图像、工具末端的运动和夹爪开闭；部分接口还记录力或触觉。",
+    capture: "采集时无需目标机器人。典型 UMI 用腕部相机和惯性传感器估计手持夹爪的六自由度轨迹。",
+    transfer: "以当前工具位姿为基准表示未来目标。机器人再把该相对轨迹变换到自身坐标系，求解可执行的关节指令。",
+    limit: "工具轨迹没有记录目标机器人的关节状态或执行器响应。即使几何上可达，夹爪形状和接触力差异仍可能让物体滑落。",
+    example: "FastUMI-100K 收录 10 万次示范，覆盖 32 项任务。DexUMI 则用可穿戴外骨骼约束手部运动，使示范更接近灵巧手能执行的姿态。",
+    ref: "第 3 节，第 14–16 页；表 2，第 15 页；图 5，第 8 页"
+  },
+  {
+    id: "ego",
+    num: 3,
+    cn: "第一与第三视角人类数据",
+    en: "Egocentric and Exocentric Data",
+    signal: "记录人做什么、物体怎样移动、动作按什么顺序发生。部分数据另有米制手姿、注视点或接触标注。",
+    capture: "头戴相机随头部移动，固定在环境中的相机补足身体和遮挡区域。手姿可以通过多视角重建、模型估计或穿戴设备获得。",
+    transfer: "视频可教会模型选择抓取部位和安排任务步骤。要驱动灵巧手，还需把腕与手指的运动映射到目标关节，并检验接触能否保持。",
+    limit: "遮挡会使接触区域不可见。模型补出的手姿属于估计值，人手的关节活动范围、柔顺性和摩擦也与机器手不同。",
+    example: "表 3 中，EgoDex 的 829 小时带逐帧手姿与米制三维监督。Egocentric-100K 有 100,405 小时，表中未列这两项监督。",
+    ref: "第 4 节，第 16–22 页；表 3，第 17 页；图 6，第 18 页"
+  },
+  {
+    id: "sim",
+    num: 4,
+    cn: "仿真数据",
+    en: "Simulation Data",
+    signal: "物理引擎能同时输出动作、物体位姿、接触和任务结果等标签，还能把环境重置到指定状态。",
+    capture: "先建立物体资产和交互规则，再用规划、专家策略或示范扩增产生轨迹。并行采样能系统改变物体布局和初始条件。",
+    transfer: "对照真实平台校准相机、摩擦与时延，再检查仿真中有效的策略能否在真机上完成同一任务。",
+    limit: "外观逼真无法保证动力学正确。抽屉的关节轴或阻尼设错，策略在仿真里学到的拉动方向或用力方式就可能失效。",
+    example: "MimicGen 以少量示范为起点，变化物体配置并生成新动作。表 5 列出 5 万条轨迹、16 项任务。",
+    ref: "第 5 节，第 22–29 页；表 5，第 25 页；第 5.4、5.6 节"
+  },
+  {
+    id: "general",
+    num: 5,
+    cn: "通用数据",
+    en: "General Data",
+    signal: "图文、视频、分割、三维几何、任务计划及抓取资源，分别提供物体语义、空间关系、步骤顺序或交互候选。",
+    capture: "训练样本可来自图像问答、人工标注或自动生成。例如，给图中某个功能部件标点，就能把语言描述和空间位置联系起来。",
+    transfer: "将“把手在哪里”转为候选抓取位置，再用机器人的几何约束、可达性及接触反馈决定怎样抓。",
+    limit: "问答正确或选点准确，仍不足以确定执行所需的腕部轨迹、夹持力和纠错动作。",
+    example: "RoboPoint 提供图像、文本与点标注。DexGraspNet 2.0 同时出现在仿真和通用资源表中：它由仿真生成，又可提供抓取先验。",
+    ref: "第 6 节，第 29–35 页；表 6，第 30–31 页；对照表 5，第 25 页"
+  }
+];
+
+window.surveyQuestions = [
+  {
+    q: "下一小时数据该采哪一类？",
+    a: "如果瓶颈是识别新物体，可先试图文或视频；若瓶颈是插接时卡住，则试带接触反馈的真机示范。固定模型、训练预算和测试场景，分别增加一个来源，才能估计这类数据的边际收益。最优配比仍是开放问题。",
+    ref: "第 7.2.1 节，第 35–37 页；第 8.6 节，第 45 页"
+  },
+  {
+    q: "失败轨迹中哪一段最值得保留？",
+    a: "以夹爪打滑为例，可以保存滑移前的图像与触觉变化、接管时刻、纠正动作和最终结果。再从相似的滑移状态开始测试，观察策略能否恢复。只有最终成败标签时，很难分清错在抓取还是纠正。",
+    ref: "第 2.3.3 节，第 12 页；第 8.1–8.2 节，第 43–44 页"
+  },
+  {
+    q: "同样的手腕轨迹为什么会在另一台机器人上失败？",
+    a: "两台机器人的工具中心、关节限位和指尖接触面可能不同。可先统一参考坐标，再分开检验路径可达性与抓取稳定性，确认问题来自几何映射还是接触动力学。",
+    ref: "第 3.3–3.4 节，第 15–16 页；第 8.4–8.5 节，第 44–45 页"
+  },
+  {
+    q: "怎样分辨数据扩增和新增的独立经验？",
+    a: "第 37 页举例说，1,933 小时第一视角视频可派生 24,808 小时机器人兼容轨迹。评估时可记录每条轨迹对应的原始片段，让同源派生样本一起划入训练或测试，再报告新场景上的真机表现。",
+    ref: "第 7.2.1 节，第 37 页；第 8.3 节，第 44 页。划分方法为阅读报告建议"
+  }
+];
+
+window.surveyCases = [
+  {
+    name: "Open X-Embodiment",
+    kind: "跨本体",
+    title: "别的机械臂采集的数据能帮到小数据集吗？",
+    metric: "4 / 5",
+    unit: "个小数据域获益",
+    scope: "RT-1-X 混合训练使用 9 种机械臂的数据，在 5 个小规模数据域沿用各域的真机评测。",
+    takeaway: "其中 4 个数据域的成功率超过该数据集原作者用本域数据训练的方法。",
+    limit: "在数据较多的 Bridge 和 Google Robot 场景，RT-1-X 的成绩低于仅用本域数据训练的 RT-1。实验覆盖面也小于仓库收录的 22 种本体。",
+    url: "https://arxiv.org/html/2310.08864#S5.SS1",
+    cite: "原论文第 IV-C、V-A 节，图 3 与表 I"
+  },
+  {
+    name: "UMI",
+    kind: "真机",
+    title: "同一套投掷策略，补偿时延能多投中多少？",
+    metric: "+30",
+    unit: "个百分点",
+    scope: "用 280 段手持示范训练策略，再让机器人把 6 种物体投进指定容器。保持策略权重不变，切换推理时的时延补偿。",
+    takeaway: "开启补偿时投中 105/120 件，关闭时为 69/120 件。快速投掷尤其依赖手臂加速与夹爪释放的时机。",
+    limit: "分母是尝试投掷的物体数。该差值适用于这项动态投掷任务。",
+    url: "https://arxiv.org/html/2402.10329#S5.SS2",
+    cite: "原论文第 V-B 节，图 8"
+  },
+  {
+    name: "RACER",
+    kind: "仿真",
+    title: "带纠错说明的示范怎样影响任务表现？",
+    metric: "70.2%",
+    unit: "仿真平均成功率",
+    scope: "RLBench 的 18 项任务，5 个随机种子取平均。RACER 用带恢复动作的示范训练，并由视觉语言模型生成分步指令。",
+    takeaway: "自主运行的 RACER 为 70.2%，RVT 基线为 62.9%。图 4 另行比较固定指令类型时，加入恢复数据的影响。",
+    limit: "两套系统同时改变了指令和训练数据。归因于恢复数据的增益要看消融，人工介入的 RACER+H 另算。",
+    url: "https://arxiv.org/html/2409.14674#S4.SS2",
+    cite: "原论文第 IV-B 节，表 I 与图 4a"
+  },
+  {
+    name: "RT-2",
+    kind: "真机",
+    title: "微调时保留图文训练，机器人能否更好地泛化？",
+    metric: "52% → 63%",
+    unit: "平均成功率",
+    scope: "同为 55B 参数的 PaLI-X，比较仅用机器人数据微调与混入原视觉语言数据共同微调，评测涉及未见物体、背景和环境。",
+    takeaway: "作者报告，两种配方在六种难度与场景组合上的平均成功率相差 11 个百分点。",
+    limit: "其中困难环境一项从 19% 升至 35%，困难物体一项两组均为 62%。平均结果不能代替逐项比较。",
+    url: "https://arxiv.org/html/2307.15818#A8.SS3",
+    cite: "原论文第 4.3 节，附录 H.3 表 8"
+  },
+  {
+    name: "GR00T N1",
+    kind: "仿真",
+    title: "每项任务给 100 条示范，预训练策略表现如何？",
+    metric: "50.0%",
+    unit: "GR-1 仿真成功率",
+    scope: "初代 GR00T-N1-2B 在 24 项 GR-1 桌面仿真任务上后训练。每项任务用 100 条示范，闭环测试 100 次，按论文规则在末 5 个检查点中择优。",
+    takeaway: "在该任务集上，N1 平均成功率为 50.0%，从头训练的扩散策略为 32.7%。",
+    limit: "两组还存在架构和预训练等差异。这个对照无法拆出某一种训练数据单独贡献了多少。",
+    url: "https://arxiv.org/html/2503.14734#S4.SS4",
+    cite: "原论文第 4.3–4.4 节，表 2"
+  },
+  {
+    name: "Motus",
+    kind: "仿真",
+    title: "同时预测视频和动作，策略在随机化场景中表现如何？",
+    metric: "87.02%",
+    unit: "随机化场景平均成功率",
+    scope: "RoboTwin 2.0 共 50 项任务。每项用 50 条干净场景和 500 条随机化场景示范联合微调，测试每项执行 100 次。",
+    takeaway: "完整模型的平均成功率为 87.02%，去除预训练的对照为 77.00%。挂杯任务的完整模型只达到 38%。",
+    limit: "平均值来自仿真闭环。真机实验对部分完成的子步骤也给分，两套指标须分别解读。",
+    url: "https://arxiv.org/html/2512.13030v2#S5.SS2",
+    cite: "原论文第 5.2–5.3 节，表 2 与附录表 14"
+  },
+  {
+    name: "EgoScale",
+    kind: "人类示范",
+    title: "增加人类视频时长，灵巧手操作能多完成几步？",
+    metric: "0.30 → 0.71",
+    unit: "平均任务完成度",
+    scope: "人类动作视频从 1,000 增至 20,000 小时，分五档预训练。每档都跳过人机对齐中间训练，用任务示范做后训练，再测五项真机灵巧操作。",
+    takeaway: "在卷衣、分卡片、拧瓶盖等任务中，平均完成度随预训练规模上升。得分给已完成的步骤计分。",
+    limit: "该结果来自特定机器人、任务和后训练条件。完整任务的成功率是另一项单独统计的指标。",
+    url: "https://arxiv.org/html/2602.16710v1#S3.SS3",
+    cite: "原论文第 3.1、3.3 节，图 5"
+  }
+];
+
+window.surveyModels = [
+  {
+    name: "Embodied Brain",
+    cn: "具身大脑",
+    input: "图像、视频与语言指令，也可加入手或物体轨迹。",
+    output: "目标位置、可交互区域、任务进度或下一步子目标。",
+    role: "从视频学习动作顺序，从示范提取路点。例如先找到抽屉把手，再判断应向哪侧拉。",
+    limit: "把手位置和拉动方向明确后，仍需控制策略确定机械臂轨迹与用力大小。",
+    example: "RynnBrain · 综述第 7.3 节"
+  },
+  {
+    name: "VLA",
+    cn: "视觉语言动作模型",
+    input: "当前图像与语言指令，部分模型还读取本体状态。",
+    output: "目标本体的动作或一小段动作序列，如手腕位移与夹爪开度。",
+    role: "用动作标注学习如何执行，用通用图文或人类视频补充物体含义、任务步骤等先验。",
+    limit: "控制周期、坐标系或夹爪约定改变时，数值相同的输出可能驱动不同的物理运动。",
+    example: "RT-2 预测离散动作词元，GR00T N1 预测连续动作块（综述第 7.4 节）"
+  },
+  {
+    name: "WAM",
+    cn: "世界动作模型",
+    input: "当前观察、任务条件，以及因训练目标而异的动作或交互轨迹。",
+    output: "动作条件下的未来观测或状态，部分模型还联合生成动作。",
+    role: "从无动作视频学习常见变化，再用动作与结果的配对学习施加不同动作会产生什么后果。",
+    limit: "要用模型比较两个候选动作，需验证两种动作的预测差异与真实执行结果是否一致。",
+    example: "Motus · 联合预测视频与动作。见综述第 7.5 节"
+  }
+];
+</script>
+<script>'use strict';
+const layers = window.surveyLayers, models = window.surveyModels, cases = window.surveyCases;
+const $ = (selector, parent=document) => parent.querySelector(selector);
+const $$ = (selector, parent=document) => [...parent.querySelectorAll(selector)];
+const escapeText = s => String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pad = n => String(n).padStart(2,'0');
+const lines = entries => '<dl class="fact-lines">'+entries.map(([k,v])=>'<div><dt>'+escapeText(k)+'</dt><dd>'+escapeText(v)+'</dd></div>').join('')+'</dl>';
+const heroText = ['观察、控制与真实反馈','腕部图像、工具轨迹与夹爪状态','人手、物体与任务顺序','可重置的状态、动作与物理标签','物体语义、空间关系与推理'];
+const shortLayers = ['真机','UMI','人类视角','仿真','通用'];
+function tabs(root,items,onSelect,tabPanel){
+  const wrap=$(root);
+  items.forEach((label,i)=>{
+    const b=document.createElement('button');
+    b.type='button'; b.id=wrap.id+'-'+i; b.setAttribute('role','tab'); b.setAttribute('aria-controls',tabPanel.id);
+    b.innerHTML=label;
+    b.addEventListener('click',()=>select(i));
+    b.addEventListener('keydown',e=>{
+      let index;
+      if(e.key==='ArrowRight'||e.key==='ArrowDown') index=(i+1)%items.length;
+      else if(e.key==='ArrowLeft'||e.key==='ArrowUp') index=(i-1+items.length)%items.length;
+      else if(e.key==='Home') index=0;
+      else if(e.key==='End') index=items.length-1;
+      else return;
+      e.preventDefault();select(index);wrap.children[index].focus();
+    });wrap.append(b);
+  });
+  function select(i){
+    [...wrap.children].forEach((b,k)=>{b.setAttribute('aria-selected',String(k===i));b.tabIndex=k===i?0:-1;});
+    tabPanel.setAttribute('aria-labelledby',wrap.children[i].id);onSelect(i);
+  }
+  select(0);return select;
+}
+const layerPanel=$('#layerPanel');
+const selectLayer=tabs('#layerTabs',layers.map((d,i)=>'<span>L'+pad(d.num)+'</span>'+escapeText(shortLayers[i])),i=>{
+  const d=layers[i];
+  layerPanel.innerHTML='<div class="tag">L'+pad(d.num)+' / '+escapeText(d.en.toUpperCase())+'</div><h3>'+escapeText(d.cn)+'</h3><p>'+escapeText(d.signal)+'</p>'+lines([['如何采集',d.capture],['如何迁移',d.transfer],['主要缺口',d.limit]])+'<p class="example">'+escapeText(d.example)+'</p><p class="ref">'+escapeText(d.ref)+'</p>';
+  $('#heroLayerLabel').textContent='L'+pad(d.num)+' · '+d.cn;
+  $('#heroLayerText').textContent=heroText[i];
+  $$('.tier').forEach(t=>{const active=Number(t.dataset.tier)===i;t.classList.toggle('sel',active);t.setAttribute('aria-pressed',String(active));});
+},layerPanel);
+$$('.tier').forEach(t=>{
+  t.addEventListener('click',()=>selectLayer(Number(t.dataset.tier)));
+  t.addEventListener('keydown',e=>{if(e.key===' '||e.key==='Enter'){e.preventDefault();selectLayer(Number(t.dataset.tier));}});
+});
+const taskSteps=[
+  {label:'识别目标',heading:'找到餐具和把手',text:'一句“把餐具收好”同时指向物体和容器。图文与人类视频可以把词语对应到物体、部件和任务顺序。',diagnosis:'若总是选错抽屉，先检查指代与空间定位，再看动作轨迹。'},
+  {label:'拉开抽屉',heading:'让把手沿轨道移动',text:'UMI 可以记录抓握和拉动的末端示范。仿真可以改变抽屉开度和把手位置，真机才能核对实际阻力。',diagnosis:'若仿真能拉开、真机却卡住，检查关节轴、摩擦和控制延迟。'},
+  {label:'放入餐具',heading:'对齐位置并松开夹爪',text:'人类视频给出放置顺序。机器人的腕部位姿、夹爪开度和碰撞结果决定了餐具是否落在抽屉里。',diagnosis:'若能识别却夹不住，检查夹爪几何、接触位置和动作单位。'},
+  {label:'失败恢复',heading:'餐具滑落后重新抓取',text:'从滑移前开始记录，保留接管时刻、纠正动作和最终结果。这样才能区分模型是及时接住物体，还是落地后重新抓取。',diagnosis:'从相似的失败状态重新开始评测，单独统计恢复成功与超时。'}
+];
+const taskNav=$('#taskTabs');
+function taskSelect(i){const s=taskSteps[i];$('#taskNote').innerHTML='<small>STEP '+pad(i+1)+'</small><h3>'+s.heading+'</h3><p>'+s.text+'</p><p class="diagnosis">'+s.diagnosis+'</p>';[...taskNav.children].forEach((b,k)=>b.setAttribute('aria-pressed',String(i===k)));$$('.scene-marker').forEach(m=>m.classList.toggle('on',Number(m.dataset.scene)===i));}
+taskSteps.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML='<span>'+pad(i+1)+'</span>'+s.label;b.addEventListener('click',()=>taskSelect(i));taskNav.append(b);});taskSelect(0);
+const modelPanel=$('#modelPanel');
+tabs('#modelTabs',['具身大脑','VLA','WAM'],i=>{
+  const m=models[i];modelPanel.innerHTML='<div class="tag">PARADIGM '+pad(i+1)+' / '+escapeText(m.name.toUpperCase())+'</div><h3>'+escapeText(m.cn)+'</h3><div class="model-seq"><div><small>INPUT / 输入</small>'+escapeText(m.input)+'</div><span aria-hidden="true">→</span><div><small>OUTPUT / 输出</small>'+escapeText(m.output)+'</div></div>'+lines([['训练信号',m.role],['能力边界',m.limit]])+'<p class="ref">'+escapeText(m.example)+'</p>';
+},modelPanel);
+const categories=['全部',...new Set(cases.map(c=>c.kind))];
+function filterCases(category){
+  $$('#filters button').forEach(b=>b.setAttribute('aria-pressed',String(b.textContent===category)));
+  const result=cases.filter(c=>category==='全部'||c.kind===category);$('#resultCount').textContent=result.length+' / '+cases.length+' 项研究';
+  $('#caseList').innerHTML=result.map(c=>'<details class="case"><summary><span class="idx">'+pad(cases.indexOf(c)+1)+'</span><span><strong>'+escapeText(c.name)+'</strong><small>'+escapeText(c.title)+'</small></span><span class="score">'+escapeText(c.metric)+'<small>'+escapeText(c.unit)+'</small></span><span class="exp" aria-hidden="true">+</span></summary><div class="case-body">'+lines([['证据类型',c.kind],['评测条件',c.scope],['观察结果',c.takeaway],['适用边界',c.limit]])+'<a target="_blank" rel="noopener" href="'+escapeText(c.url)+'">'+escapeText(c.cite)+' ↗</a></div></details>').join('');
+}
+categories.forEach(cat=>{const b=document.createElement('button');b.type='button';b.textContent=cat;b.addEventListener('click',()=>filterCases(cat));$('#filters').append(b);});filterCases('全部');
+$('#questions').innerHTML=window.surveyQuestions.map(({q,a,ref})=>'<details class="question"><summary>'+escapeText(q)+'</summary><p>'+escapeText(a)+'</p><p class="ref">'+escapeText(ref)+'</p></details>').join('');
+const citation = `@article{ye2026datapyramid,
+  title  = {Data Pyramid for Embodied Manipulation: A Survey},
+  author = {Ye, Yifan and Fu, Yankai and Lv, Yaoxu and Hou, Bohan and Cen, Jun and Kong, Lingdong and Zheng, Duo and Chen, Tianxing and Liu, Jiaming and Cao, Ziang and Lou, Yunfan and Chow, Wei and Sun, Xian and Wang, Yingshuo and Ge, Kuangzhi and Chi, Xiaowei and Zhang, Xidong and Pang, Zhibo and Zhong, Yiwu and Han, Sirui and Lu, Zhihe and Yuan, Weihao and Chen, Qifeng and Wang, Michael Yu and Mu, Yao and Liu, Ziwei and Yang, Jianfei and Luo, Ping and Zhang, Shanghang},
+  journal = {arXiv preprint arXiv:2607.24744},
+  year = {2026},
+  url = {https://arxiv.org/abs/2607.24744v2}
+}`;
+$('#bib').textContent=citation;
+$('#copyCite').addEventListener('click',async()=>{
+  const status=$('#copyStatus');
+  try{
+    if(!navigator.clipboard?.writeText) throw Error();
+    await navigator.clipboard.writeText(citation);status.textContent='已复制';return;
+  }catch{
+    const range=document.createRange();range.selectNodeContents($('#bib'));
+    const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+    try{if(document.execCommand('copy')){status.textContent='已复制';return;}}catch{}
+    status.textContent='引用已选中，可使用系统复制命令。';
+  }
+});
+const menu=$('#topMenu'),toggle=$('#tocToggle');
+function setMenu(open){menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));}
+toggle.addEventListener('click',()=>setMenu(menu.hidden));
+menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){setMenu(false);toggle.focus();}});
+document.addEventListener('click',e=>{if(!menu.hidden&&!e.target.closest('.mast'))setMenu(false);});
+const chapters=$$('article .chapter');
+let pending=false;
+function scrollState(){
+  const doc=document.documentElement;const max=doc.scrollHeight-innerHeight;
+  $('#progress').style.width=(max>0?Math.min(100,Math.max(0,scrollY/max*100)):0)+'%';
+  const current=chapters.filter(s=>s.getBoundingClientRect().top<=Math.min(innerHeight*.31,220)).at(-1)?.id;
+  $$('.side nav a,.top-menu a').forEach(a=>{const on=a.hash==='#'+current;a.classList.toggle('active',on);if(on)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');});pending=false;
+}
+function requestScrollState(){if(!pending){pending=true;requestAnimationFrame(scrollState);}}
+addEventListener('scroll',requestScrollState,{passive:true});addEventListener('resize',requestScrollState);requestScrollState();
+</script>
+</body></html>
